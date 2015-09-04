@@ -30,7 +30,6 @@ class @FlowWrapper
       FlowRouter.route path,
         name: name
         action: ->
-          console.log 'routing to ', name
           layoutOptions = {}
           if requiresAdmin
             Tracker.autorun ->
