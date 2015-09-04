@@ -30,9 +30,11 @@ class @FlowWrapper
       FlowRouter.route path,
         name: name
         action: ->
+          console.log 'routing to ', name
           layoutOptions = {}
           if requiresAdmin
             Tracker.autorun ->
+              return unless FlowRouter.getRouteName() == name
               if Meteor.isServer
                 user = this.userId
               
