@@ -9,16 +9,10 @@ Package.describe({
 Package.onUse(function(api) {
   api.versionsFrom('1.1.0.3');
   api.use('coffeescript');
-  api.use('kadira:flow-router');
+  api.use('kadira:flow-router@2.4.0');
   api.use('reactive-dict');
   api.use('underscore');
   api.addFiles([
     'flow-wrapper.coffee'
   ]);
-});
-
-Package.onTest(function(api) {
-  api.use('tinytest');
-  api.use('mplatts:flow-wrapper');
-  api.addFiles('flow-wrapper-tests.js');
 });
