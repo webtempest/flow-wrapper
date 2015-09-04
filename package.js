@@ -2,9 +2,7 @@ Package.describe({
   name: 'mplatts:flow-wrapper',
   version: '0.1.0',
   summary: 'Wraps Flow Router, allowing you to define all routes in a simple object',
-  git: '',
-  // By default, Meteor will default to using README.md for documentation.
-  // To avoid submitting documentation, set this field to null.
+  git: 'https://github.com/webtempest/flow-wrapper',
   documentation: 'README.md'
 });
 
