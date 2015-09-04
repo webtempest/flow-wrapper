@@ -1,4 +1,4 @@
-# Flow Wrapper
+# webtempest:flow-wrapper
 
 Wraps [Flow Router](https://github.com/kadirahq/flow-router), allowing you to define all basic routes in a simple object.
 
