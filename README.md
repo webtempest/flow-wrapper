@@ -4,19 +4,19 @@ Wraps [Flow Router](https://github.com/kadirahq/flow-router), allowing you to de
 
 ## Example
 
-routes.js
+`routes.js`
 
 ```js
 new FlowWrapper({
 
   routes: {
     "/": "home=layout>home",
-    "/needsLogin": "protected!=layoutsPublic>publicProtected"
+    "/needsLogin": "profile!=layouts>profile"
   }
 });
 ```
 
-layout.html
+`layout.html`
 
 ```html
 <template name="layout">
@@ -32,6 +32,15 @@ layout.html
 </template>
 ```
 
+`logging_in_helper.js`
+
+```js
+Template.registerHelper('loggingIn', function(){
+  Meteor.loggingIn();
+});
+```
+
+And then you'd have `home` and `profile` templates that load within the layout depending on the route.
 
 ## Route syntax:
 
@@ -42,6 +51,10 @@ layout.html
 // Requires login (notice the exclamation mark '!')
 "path": "name!=layout>template"
 ```
+
+## Login procedure
+
+This has a unique way of logging in. Usually if you hit a protected page you get redirected to a login screen. Then upon login you're redirected back to the original page you were after. This instead keeps you on the same route - so if you're trying to access `/profile` it will stay on that route while you login, and once logged in the `profile` template then gets rendered. This avoids the need for redirecting and storing the desired path.
 
 ## Options
 
